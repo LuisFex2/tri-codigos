@@ -1,0 +1,703 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+.verification-section {
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.verification-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.verification-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.form-container {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-subtitle {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.country-select {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1rem;
+  width: 120px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.phone-input {
+  flex: 1;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.country-select:focus,
+.phone-input:focus {
+  border-color: #667eea;
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  color: #666;
+  margin: 20px 0;
+}
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  display: none;
+  background: #ffe6e6;
+  color: #d32f2f;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border-left: 4px solid #d32f2f;
+}
+
+.error-message a {
+  color: #25d366;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.premium-content {
+  display: none;
+  padding: 40px;
+  background: #141414;
+  color: white;
+}
+
+/* Added platform tabs styling */
+.platform-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: #222;
+  border-radius: 10px;
+  padding: 5px;
+  gap: 5px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  color: #999;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tab-btn:hover {
+  color: #fff;
+  background: #333;
+}
+
+.tab-btn.active {
+  color: white;
+  background: #e50914;
+}
+
+.tab-btn[data-platform="disney"].active {
+  background: #113ccf;
+}
+
+.tab-btn[data-platform="amazon"].active {
+  background: #ff9900;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.welcome-message p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.platform-content {
+  display: none;
+}
+
+.platform-content.active {
+  display: block;
+}
+
+.netflix-demo {
+  background: #000;
+  border-radius: 15px;
+  padding: 20px;
+  border: 3px solid #e50914;
+}
+
+.netflix-logo {
+  color: #e50914;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.demo-form {
+  background: #333;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.demo-form h4 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.demo-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background: #222;
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.demo-btn {
+  width: 100%;
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.demo-btn:hover {
+  background: #f40612;
+}
+
+.whatsapp-btn {
+  width: 100%;
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.whatsapp-btn:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:active {
+  transform: translateY(0);
+}
+
+.valid-emails {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.valid-emails h5 {
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.email-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.email-tag {
+  background: #2196f3; /* Changed from green to blue to avoid confusion with WhatsApp button */
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.success-animation {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.note-section {
+  background: #ff4444;
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.note-section h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Added Disney+ specific styling */
+.disney-demo {
+  background: #000;
+  border-radius: 15px;
+  padding: 20px;
+  border: 3px solid #113ccf;
+}
+
+.disney-logo {
+  color: #113ccf;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.disney-btn {
+  background: #113ccf !important;
+}
+
+.disney-btn:hover {
+  background: #0f35b8 !important;
+}
+
+/* Added Amazon Prime specific styling */
+.amazon-demo {
+  background: #000;
+  border-radius: 15px;
+  padding: 20px;
+  border: 3px solid #ff9900;
+}
+
+.amazon-logo {
+  color: #ff9900;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.amazon-btn {
+  background: #ff9900 !important;
+}
+
+.amazon-btn:hover {
+  background: #e6890a !important;
+}
+
+.premium-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.premium-header h2 {
+  font-size: 2.5rem;
+  color: #e50914;
+  margin-bottom: 10px;
+}
+
+.premium-header p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.instructions {
+  background: #222;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #333;
+}
+
+.instructions h3 {
+  color: #e50914;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.instruction-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.instruction-item:hover {
+  background: #444;
+  transform: translateX(5px);
+}
+
+.step-number {
+  background: #e50914;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.step-text {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.step-desc {
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 5px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .container {
+    margin: 0;
+    border-radius: 15px;
+    min-height: auto;
+  }
+
+  .verification-section {
+    padding: 25px 15px;
+  }
+
+  .verification-section h1 {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .verification-section p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .form-container {
+    padding: 20px 15px;
+    margin: 15px 10px;
+    border-radius: 12px;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .country-select,
+  .phone-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .submit-btn {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .whatsapp-btn {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .premium-header h2 {
+    font-size: 2rem;
+  }
+
+  .premium-header p {
+    font-size: 1rem;
+  }
+
+  .instructions {
+    padding: 20px 15px;
+  }
+
+  .instructions h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .instruction-item {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .step-number {
+    width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+  }
+
+  .netflix-demo {
+    padding: 15px;
+  }
+
+  .netflix-logo {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .demo-form {
+    padding: 20px 15px;
+  }
+
+  .demo-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 10px;
+  }
+
+  .email-tags {
+    gap: 6px;
+  }
+
+  .email-tag {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+
+  /* Added mobile responsive styles for tabs */
+  .platform-tabs {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .tab-btn {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  .disney-logo,
+  .amazon-logo {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .verification-section h1 {
+    font-size: 1.6rem;
+  }
+
+  .verification-section p {
+    font-size: 0.95rem;
+  }
+
+  .form-container {
+    margin: 10px 5px;
+    padding: 15px 12px;
+  }
+
+  .premium-content {
+    padding: 25px 15px;
+  }
+
+  .instructions {
+    padding: 15px 12px;
+  }
+
+  .instruction-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .step-number {
+    align-self: center;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .netflix-logo {
+    font-size: 1.8rem;
+  }
+
+  .email-tags {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-btn {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+
+  .disney-logo,
+  .amazon-logo {
+    font-size: 1.5rem;
+  }
+}
