@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación WhatsApp - Acceso Premium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sección de Verificación -->
+        <div class="verification-section" id="verificationSection">
+            <h1>🚀 Acceso Premium</h1>
+            <p>Ingresa tu número de WhatsApp para acceder al contenido exclusivo</p>
+            
+            <div class="form-container">
+                <h2 class="form-title">Ingresa tu WhatsApp</h2>
+                <p class="form-subtitle">
+                    Escribe tu número sin espacios (Ej: 960744787)
+                </p>
+                
+                <form id="phoneForm">
+                    <div class="input-group">
+                        <select class="country-select" id="countryCode">
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+52">🇲🇽 +52</option>
+                            <option value="+51" selected>🇵🇪 +51</option>
+                            <option value="+54">🇦🇷 +54</option>
+                            <option value="+56">🇨🇱 +56</option>
+                            <option value="+57">🇨🇴 +57</option>
+                            <option value="+58">🇻🇪 +58</option>
+                            <option value="+34">🇪🇸 +34</option>
+                        </select>
+                        <input 
+                            type="tel" 
+                            class="phone-input" 
+                            id="phoneNumber" 
+                            placeholder="Número de WhatsApp"
+                            required
+                            maxlength="15"
+                        >
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Verificar Acceso
+                    </button>
+                </form>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Verificando tu número...</p>
+                </div>
+                
+                <div class="error-message" id="errorMessage">
+                    <strong>❌ Este número no está registrado en la base de datos</strong>
+                    <p>Si es un error, escríbenos al <a href="https://wa.me/51960744787" target="_blank">wa.me/51960744787</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenido Premium -->
+        <div class="premium-content" id="premiumContent">
+            <!-- Replaced header with streaming platform tabs -->
+            <div class="platform-tabs">
+                <button class="tab-btn active" data-platform="netflix">NETFLIX</button>
+                <button class="tab-btn" data-platform="disney">DISNEY</button>
+                <button class="tab-btn" data-platform="amazon">AMAZON</button>
+            </div>
+            
+            <div class="welcome-message">
+                <p>🎉 Bienvenido <span id="clientName"></span> al servicio de códigos.</p>
+            </div>
+            
+            <!-- Netflix Platform Content -->
+            <div class="platform-content active" id="netflix-content">
+                <div class="content-grid">
+                    <div class="instructions">
+                        <h3>INSTRUCCIONES</h3>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <div class="step-title">Ingresa la cuenta Netflix en tu dispositivo</div>
+                                <div class="step-desc">Solicita el código desde la opción <strong>"Estoy de viaje"</strong></div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <div class="step-title">Digita el correo de tu cuenta Netflix</div>
+                                <div class="step-desc">En <strong>"Escribir Correo Aquí"</strong></div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <div class="step-title">Clic en el botón "Enviar"</div>
+                                <div class="step-desc">Para obtener los correos correspondientes</div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">4</div>
+                            <div class="step-text">
+                                <div class="step-title">Clic en el botón "Abrir en WhatsApp"</div>
+                                <div class="step-desc">Fíjate que coincida la fecha y hora del envío de tu código</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="netflix-demo">
+                        <div class="netflix-logo">NETFLIX</div>
+                        
+                        <div class="demo-form netflix-form">
+                            <h4>Correo Electrónico</h4>
+                            <input type="email" class="demo-input" placeholder="Escribir correo aquí" id="emailInput">
+                            <button class="demo-btn">Enviar</button>
+                            
+                            <div id="whatsappContainer" style="display: none; margin-top: 15px;">
+                                <button id="whatsappButton" class="whatsapp-btn">
+                                    📱 Abrir en WhatsApp
+                                </button>
+                            </div>
+                            
+                            <div class="error-message" id="emailError" style="display: none;">
+                                <strong></strong>
+                            </div>
+                            
+                            <div class="valid-emails">
+                                <h5>CORREOS VÁLIDOS PARA CONSULTA</h5>
+                                <div class="email-tags">
+                                    <span class="email-tag">@legalnetf.com</span>
+                                    <span class="email-tag">@gmail.com</span>
+                                    <span class="email-tag">@legalclub.com.co</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note-section">
+                    <h4>📝 NOTA IMPORTANTE</h4>
+                    <p>Si no llega el correo con tu código, puedes reenviar el código desde tu dispositivo debido a que Netflix a veces no envía el código.</p>
+                    <p>Si persiste el problema, contacta a soporte técnico: <a href="https://wa.me/51960744787" target="_blank">wa.me/51960744787</a></p>
+                </div>
+            </div>
+            
+            <!-- Disney Platform Content -->
+            <div class="platform-content" id="disney-content">
+                <div class="content-grid">
+                    <div class="instructions">
+                        <h3>INSTRUCCIONES</h3>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <div class="step-title">Ingresa la cuenta Disney+ en tu dispositivo</div>
+                                <div class="step-desc">Solicita el código desde la configuración de cuenta</div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <div class="step-title">Digita el correo de tu cuenta Disney+</div>
+                                <div class="step-desc">En <strong>"Escribir Correo Aquí"</strong></div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <div class="step-title">Clic en el botón "Enviar"</div>
+                                <div class="step-desc">Para obtener los correos correspondientes</div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">4</div>
+                            <div class="step-text">
+                                <div class="step-title">Clic en el botón "Abrir en WhatsApp"</div>
+                                <div class="step-desc">Fíjate que coincida la fecha y hora del envío de tu código</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="disney-demo">
+                        <div class="disney-logo">DISNEY+</div>
+                        
+                        <div class="demo-form disney-form">
+                            <h4>Correo Electrónico</h4>
+                            <input type="email" class="demo-input" placeholder="Escribir correo aquí" id="disneyEmailInput">
+                            <button class="demo-btn disney-btn">Enviar</button>
+                            
+                            <div id="disneyWhatsappContainer" style="display: none; margin-top: 15px;">
+                                <button id="disneyWhatsappButton" class="whatsapp-btn">
+                                    📱 Abrir en WhatsApp
+                                </button>
+                            </div>
+                            
+                            <div class="error-message" id="disneyEmailError" style="display: none;">
+                                <strong></strong>
+                            </div>
+                            
+                            <div class="valid-emails">
+                                <h5>CORREOS VÁLIDOS PARA CONSULTA</h5>
+                                <div class="email-tags">
+                                    <span class="email-tag">@disney.com</span>
+                                    <span class="email-tag">@gmail.com</span>
+                                    <span class="email-tag">@hotmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note-section">
+                    <h4>📝 NOTA IMPORTANTE</h4>
+                    <p>Si no llega el correo con tu código, puedes reenviar el código desde tu dispositivo debido a que Disney+ a veces no envía el código.</p>
+                    <p>Si persiste el problema, contacta a soporte técnico: <a href="https://wa.me/51960744787" target="_blank">wa.me/51960744787</a></p>
+                </div>
+            </div>
+            
+            <!-- Amazon Platform Content -->
+            <div class="platform-content" id="amazon-content">
+                <div class="content-grid">
+                    <div class="instructions">
+                        <h3>INSTRUCCIONES</h3>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <div class="step-title">Ingresa la cuenta Amazon Prime en tu dispositivo</div>
+                                <div class="step-desc">Solicita el código desde la configuración de cuenta</div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <div class="step-title">Digita el correo de tu cuenta Amazon Prime</div>
+                                <div class="step-desc">En <strong>"Escribir Correo Aquí"</strong></div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <div class="step-title">Clic en el botón "Enviar"</div>
+                                <div class="step-desc">Para obtener los correos correspondientes</div>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="step-number">4</div>
+                            <div class="step-text">
+                                <div class="step-title">Clic en el botón "Abrir en WhatsApp"</div>
+                                <div class="step-desc">Fíjate que coincida la fecha y hora del envío de tu código</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="amazon-demo">
+                        <div class="amazon-logo">PRIME VIDEO</div>
+                        
+                        <div class="demo-form amazon-form">
+                            <h4>Correo Electrónico</h4>
+                            <input type="email" class="demo-input" placeholder="Escribir correo aquí" id="amazonEmailInput">
+                            <button class="demo-btn amazon-btn">Enviar</button>
+                            
+                            <div id="amazonWhatsappContainer" style="display: none; margin-top: 15px;">
+                                <button id="amazonWhatsappButton" class="whatsapp-btn">
+                                    📱 Abrir en WhatsApp
+                                </button>
+                            </div>
+                            
+                            <div class="error-message" id="amazonEmailError" style="display: none;">
+                                <strong></strong>
+                            </div>
+                            
+                            <div class="valid-emails">
+                                <h5>CORREOS VÁLIDOS PARA CONSULTA</h5>
+                                <div class="email-tags">
+                                    <span class="email-tag">@amazon.com</span>
+                                    <span class="email-tag">@gmail.com</span>
+                                    <span class="email-tag">@yahoo.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note-section">
+                    <h4>📝 NOTA IMPORTANTE</h4>
+                    <p>Si no llega el correo con tu código, puedes reenviar el código desde tu dispositivo debido a que Amazon Prime a veces no envía el código.</p>
+                    <p>Si persiste el problema, contacta a soporte técnico: <a href="https://wa.me/51960744787" target="_blank">wa.me/51960744787</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
