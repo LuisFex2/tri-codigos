@@ -630,41 +630,32 @@ body {
     padding: 4px 10px;
   }
 
-  /* Improved mobile tab layout to look like a vertical list */
+  /* Improved mobile tab layout to look like a horizontal list */
   .platform-tabs {
-    flex-direction: column;
-    gap: 2px;
-    padding: 0;
-    background: transparent;
-    border-radius: 0;
+    flex-direction: row;
+    gap: 3px;
+    padding: 3px;
+    background: #222;
+    border-radius: 10px;
     margin-bottom: 30px;
+    overflow-x: auto;
   }
 
   .tab-btn {
-    padding: 18px 20px;
-    font-size: 1rem;
-    border-radius: 0;
-    background: #333;
+    flex: 1;
+    min-width: 80px;
+    padding: 12px 8px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    background: transparent;
     color: #999;
-    border-bottom: 1px solid #444;
-    text-align: left;
-    justify-content: flex-start;
+    text-align: center;
+    white-space: nowrap;
     transition: all 0.3s ease;
   }
 
-  .tab-btn:first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  .tab-btn:last-child {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom: none;
-  }
-
   .tab-btn:hover {
-    background: #444;
+    background: #333;
     color: #fff;
   }
 
