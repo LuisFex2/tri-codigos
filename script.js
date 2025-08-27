@@ -21,6 +21,9 @@ const whatsappButton = document.getElementById("whatsappButton")
 const tabButtons = document.querySelectorAll(".tab-btn")
 const platformContents = document.querySelectorAll(".platform-content")
 
+const instructionsToggle = document.getElementById("instructionsToggle")
+const instructionsWrapper = document.getElementById("instructionsWrapper")
+
 // Funciones auxiliares
 function hideEmailError() {
   emailError.style.display = "none"
@@ -73,6 +76,40 @@ function switchPlatform(platform) {
 
   // Reset any active forms in the new platform
   resetPlatformForms(platform)
+
+  updateInstructionsWrapper(platform)
+}
+
+function updateInstructionsWrapper(platform) {
+  const wrapperIds = {
+    netflix: "instructionsWrapper",
+    disney: "disneyInstructionsWrapper",
+    amazon: "amazonInstructionsWrapper",
+  }
+
+  const currentWrapper = document.getElementById(wrapperIds[platform])
+  if (currentWrapper) {
+    // Update global reference
+    window.currentInstructionsWrapper = currentWrapper
+  }
+}
+
+function toggleInstructions() {
+  const wrapper = window.currentInstructionsWrapper || instructionsWrapper
+  const toggleBtn = instructionsToggle.querySelector(".toggle-btn")
+  const toggleIcon = toggleBtn.querySelector(".toggle-icon")
+
+  if (wrapper.classList.contains("expanded")) {
+    // Collapse instructions
+    wrapper.classList.remove("expanded")
+    wrapper.classList.add("collapsed")
+    toggleIcon.textContent = "?"
+  } else {
+    // Expand instructions
+    wrapper.classList.remove("collapsed")
+    wrapper.classList.add("expanded")
+    toggleIcon.textContent = "×"
+  }
 }
 
 function resetPlatformForms(platform) {
@@ -102,6 +139,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
+  if (instructionsToggle) {
+    const toggleBtn = instructionsToggle.querySelector(".toggle-btn")
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", toggleInstructions)
+    }
+  }
+
   const disneyButton = document.querySelector(".disney-form button")
   const amazonButton = document.querySelector(".amazon-form button")
 
@@ -117,6 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
   phoneNumber.addEventListener("input", () => {
     hideMessages()
   })
+
+  updateInstructionsWrapper("netflix")
 })
 
 async function handleSubmit(e) {
@@ -408,7 +454,7 @@ function openWhatsApp(email, apiMessage) {
   const fullClientPhone = country + clientPhone
 
   // Mensaje completo de la API para enviar por WhatsApp
-  const whatsappMessage = `${apiMessage}`
+  const whatsappMessage = `Correo verificado: ${email}\n\n${apiMessage}`
 
   // URL de WhatsApp con el número del cliente y el mensaje completo
   const whatsappUrl = `https://wa.me/${fullClientPhone.replace("+", "")}?text=${encodeURIComponent(whatsappMessage)}`
