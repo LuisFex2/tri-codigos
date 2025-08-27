@@ -630,21 +630,56 @@ body {
     padding: 4px 10px;
   }
 
-  /* Added mobile responsive styles for tabs */
+  /* Improved mobile tab layout to look like a vertical list */
   .platform-tabs {
     flex-direction: column;
-    gap: 8px;
-    padding: 10px;
+    gap: 2px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    margin-bottom: 30px;
   }
 
   .tab-btn {
-    padding: 12px 15px;
-    font-size: 0.9rem;
+    padding: 18px 20px;
+    font-size: 1rem;
+    border-radius: 0;
+    background: #333;
+    color: #999;
+    border-bottom: 1px solid #444;
+    text-align: left;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
   }
 
-  .disney-logo,
-  .amazon-logo {
-    font-size: 1.8rem;
+  .tab-btn:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .tab-btn:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: none;
+  }
+
+  .tab-btn:hover {
+    background: #444;
+    color: #fff;
+  }
+
+  .tab-btn.active {
+    background: #e50914;
+    color: white;
+    font-weight: bold;
+  }
+
+  .tab-btn[data-platform="disney"].active {
+    background: #113ccf;
+  }
+
+  .tab-btn[data-platform="amazon"].active {
+    background: #ff9900;
   }
 }
 
@@ -692,8 +727,8 @@ body {
   }
 
   .tab-btn {
-    padding: 10px 12px;
-    font-size: 0.8rem;
+    padding: 16px 18px;
+    font-size: 0.95rem;
   }
 
   .disney-logo,
