@@ -516,6 +516,70 @@ body {
   line-height: 1.4;
 }
 
+/* Added collapsible instructions toggle button styling */
+.instructions-toggle {
+  display: none;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn:hover {
+  background: #444;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-icon {
+  background: #666;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.toggle-text {
+  font-weight: 500;
+}
+
+/* Instructions wrapper for collapsible functionality */
+.instructions-wrapper {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.instructions-wrapper.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin-bottom: 0;
+}
+
+.instructions-wrapper.expanded {
+  max-height: 1000px;
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   body {
     padding: 5px;
@@ -633,6 +697,25 @@ body {
   .email-tag {
     font-size: 0.8rem;
     padding: 4px 10px;
+  }
+
+  /* Show instructions toggle button only on mobile */
+  .instructions-toggle {
+    display: block;
+  }
+
+  /* Initially collapse instructions on mobile */
+  .instructions-wrapper {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .instructions-wrapper.expanded {
+    max-height: 1000px;
+    opacity: 1;
+    margin-bottom: 20px;
   }
 
   /* Improved mobile tab layout to look like a horizontal list */
