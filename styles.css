@@ -189,6 +189,11 @@ body {
   border-radius: 10px;
   padding: 5px;
   gap: 5px;
+  /* Making tabs sticky to stay at top when scrolling */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .tab-btn {
