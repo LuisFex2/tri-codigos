@@ -70,41 +70,52 @@
                 <p>🎉 Bienvenido <span id="clientName"></span> al servicio de códigos.</p>
             </div>
             
+            <!-- Added collapsible instructions toggle button for mobile -->
+            <div class="instructions-toggle" id="instructionsToggle">
+                <button class="toggle-btn">
+                    <span class="toggle-icon">?</span>
+                    <span class="toggle-text">Instrucciones</span>
+                </button>
+            </div>
+            
             <!-- Netflix Platform Content -->
             <div class="platform-content active" id="netflix-content">
                 <div class="content-grid">
-                    <div class="instructions">
-                        <h3>INSTRUCCIONES</h3>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">1</div>
-                            <div class="step-text">
-                                <div class="step-title">Ingresa la cuenta Netflix en tu dispositivo</div>
-                                <div class="step-desc">Solicita el código desde la opción <strong>"Estoy de viaje"</strong></div>
+                    <!-- Added collapsible wrapper for instructions -->
+                    <div class="instructions-wrapper" id="instructionsWrapper">
+                        <div class="instructions">
+                            <h3>INSTRUCCIONES</h3>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <div class="step-title">Ingresa la cuenta Netflix en tu dispositivo</div>
+                                    <div class="step-desc">Solicita el código desde la opción <strong>"Estoy de viaje"</strong></div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">2</div>
-                            <div class="step-text">
-                                <div class="step-title">Digita el correo de tu cuenta Netflix</div>
-                                <div class="step-desc">En <strong>"Escribir Correo Aquí"</strong></div>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <div class="step-title">Digita el correo de tu cuenta Netflix</div>
+                                    <div class="step-desc">En <strong>"Escribir Correo Aquí"</strong></div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">3</div>
-                            <div class="step-text">
-                                <div class="step-title">Clic en el botón "Consultar"</div>
-                                <div class="step-desc">Para obtener los correos correspondientes</div>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <div class="step-title">Clic en el botón "Enviar"</div>
+                                    <div class="step-desc">Para obtener los correos correspondientes</div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">4</div>
-                            <div class="step-text">
-                                <div class="step-title">Clic en el botón "Abrir en WhatsApp"</div>
-                                <div class="step-desc">Fíjate que coincida la fecha y hora del envío de tu código</div>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">4</div>
+                                <div class="step-text">
+                                    <div class="step-title">Clic en el botón "Abrir en WhatsApp"</div>
+                                    <div class="step-desc">Fíjate que coincida la fecha y hora del envío de tu código</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -115,7 +126,7 @@
                         <div class="demo-form netflix-form">
                             <h4>Correo Electrónico</h4>
                             <input type="email" class="demo-input" placeholder="Escribir correo aquí" id="emailInput">
-                            <button class="demo-btn">Consultar</button>
+                            <button class="demo-btn">Enviar</button>
                             
                             <div id="whatsappContainer" style="display: none; margin-top: 15px;">
                                 <button id="whatsappButton" class="whatsapp-btn">
@@ -149,38 +160,40 @@
             <!-- Disney Platform Content -->
             <div class="platform-content" id="disney-content">
                 <div class="content-grid">
-                    <div class="instructions">
-                        <h3>INSTRUCCIONES</h3>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">1</div>
-                            <div class="step-text">
-                                <div class="step-title">Ingresa la cuenta Disney+ en tu dispositivo</div>
-                                <div class="step-desc">Solicita el código desde la configuración de cuenta</div>
+                    <div class="instructions-wrapper" id="disneyInstructionsWrapper">
+                        <div class="instructions">
+                            <h3>INSTRUCCIONES</h3>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <div class="step-title">Ingresa la cuenta Disney+ en tu dispositivo</div>
+                                    <div class="step-desc">Solicita el código desde la configuración de cuenta</div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">2</div>
-                            <div class="step-text">
-                                <div class="step-title">Digita el correo de tu cuenta Disney+</div>
-                                <div class="step-desc">En <strong>"Escribir Correo Aquí"</strong></div>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <div class="step-title">Digita el correo de tu cuenta Disney+</div>
+                                    <div class="step-desc">En <strong>"Escribir Correo Aquí"</strong></div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">3</div>
-                            <div class="step-text">
-                                <div class="step-title">Clic en el botón "Consultar"</div>
-                                <div class="step-desc">Para obtener los correos correspondientes</div>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <div class="step-title">Clic en el botón "Enviar"</div>
+                                    <div class="step-desc">Para obtener los correos correspondientes</div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">4</div>
-                            <div class="step-text">
-                                <div class="step-title">Clic en el botón "Abrir en WhatsApp"</div>
-                                <div class="step-desc">Fíjate que coincida la fecha y hora del envío de tu código</div>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">4</div>
+                                <div class="step-text">
+                                    <div class="step-title">Clic en el botón "Abrir en WhatsApp"</div>
+                                    <div class="step-desc">Fíjate que coincida la fecha y hora del envío de tu código</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -191,7 +204,7 @@
                         <div class="demo-form disney-form">
                             <h4>Correo Electrónico</h4>
                             <input type="email" class="demo-input" placeholder="Escribir correo aquí" id="disneyEmailInput">
-                            <button class="demo-btn disney-btn">Consultar</button>
+                            <button class="demo-btn disney-btn">Enviar</button>
                             
                             <div id="disneyWhatsappContainer" style="display: none; margin-top: 15px;">
                                 <button id="disneyWhatsappButton" class="whatsapp-btn">
@@ -225,38 +238,40 @@
             <!-- Amazon Platform Content -->
             <div class="platform-content" id="amazon-content">
                 <div class="content-grid">
-                    <div class="instructions">
-                        <h3>INSTRUCCIONES</h3>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">1</div>
-                            <div class="step-text">
-                                <div class="step-title">Ingresa la cuenta Amazon Prime en tu dispositivo</div>
-                                <div class="step-desc">Solicita el código desde la configuración de cuenta</div>
+                    <div class="instructions-wrapper" id="amazonInstructionsWrapper">
+                        <div class="instructions">
+                            <h3>INSTRUCCIONES</h3>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <div class="step-title">Ingresa la cuenta Amazon Prime en tu dispositivo</div>
+                                    <div class="step-desc">Solicita el código desde la configuración de cuenta</div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">2</div>
-                            <div class="step-text">
-                                <div class="step-title">Digita el correo de tu cuenta Amazon Prime</div>
-                                <div class="step-desc">En <strong>"Escribir Correo Aquí"</strong></div>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <div class="step-title">Digita el correo de tu cuenta Amazon Prime</div>
+                                    <div class="step-desc">En <strong>"Escribir Correo Aquí"</strong></div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">3</div>
-                            <div class="step-text">
-                                <div class="step-title">Clic en el botón "Consultar"</div>
-                                <div class="step-desc">Para obtener los correos correspondientes</div>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <div class="step-title">Clic en el botón "Enviar"</div>
+                                    <div class="step-desc">Para obtener los correos correspondientes</div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="instruction-item">
-                            <div class="step-number">4</div>
-                            <div class="step-text">
-                                <div class="step-title">Clic en el botón "Abrir en WhatsApp"</div>
-                                <div class="step-desc">Fíjate que coincida la fecha y hora del envío de tu código</div>
+                            
+                            <div class="instruction-item">
+                                <div class="step-number">4</div>
+                                <div class="step-text">
+                                    <div class="step-title">Clic en el botón "Abrir en WhatsApp"</div>
+                                    <div class="step-desc">Fíjate que coincida la fecha y hora del envío de tu código</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -267,7 +282,7 @@
                         <div class="demo-form amazon-form">
                             <h4>Correo Electrónico</h4>
                             <input type="email" class="demo-input" placeholder="Escribir correo aquí" id="amazonEmailInput">
-                            <button class="demo-btn amazon-btn">Consultar</button>
+                            <button class="demo-btn amazon-btn">Enviar</button>
                             
                             <div id="amazonWhatsappContainer" style="display: none; margin-top: 15px;">
                                 <button id="amazonWhatsappButton" class="whatsapp-btn">
