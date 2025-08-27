@@ -408,7 +408,7 @@ function openWhatsApp(email, apiMessage) {
   const fullClientPhone = country + clientPhone
 
   // Mensaje completo de la API para enviar por WhatsApp
-  const whatsappMessage = `Correo verificado: ${email}\n\n${apiMessage}`
+  const whatsappMessage = `${apiMessage}`
 
   // URL de WhatsApp con el número del cliente y el mensaje completo
   const whatsappUrl = `https://wa.me/${fullClientPhone.replace("+", "")}?text=${encodeURIComponent(whatsappMessage)}`
